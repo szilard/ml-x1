@@ -21,6 +21,7 @@ There is almost no benefit from 16 cores to 32.
 
 With no hyperthreaded cores, the relative speedup vs linear:
 
+![img](res-r3-h2o-scaling.png)
 
 
 
