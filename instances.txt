@@ -1,0 +1,42 @@
+
+
+r3.8xlarge
+
+
+cat /proc/cpuinfo | grep "physical id" > cpuinfo1
+cat /proc/cpuinfo | grep "core id" > cpuinfo2
+paste cpuinfo[12] | nl -v 0
+
+     0  physical id     : 0     core id         : 0
+     1  physical id     : 0     core id         : 1
+     2  physical id     : 0     core id         : 2
+     3  physical id     : 0     core id         : 3
+     4  physical id     : 0     core id         : 4
+     5  physical id     : 0     core id         : 5
+     6  physical id     : 0     core id         : 6
+     7  physical id     : 0     core id         : 7
+     8  physical id     : 1     core id         : 0
+     9  physical id     : 1     core id         : 1
+    10  physical id     : 1     core id         : 2
+    11  physical id     : 1     core id         : 3
+    12  physical id     : 1     core id         : 4
+    13  physical id     : 1     core id         : 5
+    14  physical id     : 1     core id         : 6
+    15  physical id     : 1     core id         : 7
+    16  physical id     : 0     core id         : 0
+    17  physical id     : 0     core id         : 1
+    18  physical id     : 0     core id         : 2
+    19  physical id     : 0     core id         : 3
+    20  physical id     : 0     core id         : 4
+    21  physical id     : 0     core id         : 5
+    22  physical id     : 0     core id         : 6
+    23  physical id     : 0     core id         : 7
+    24  physical id     : 1     core id         : 0
+    25  physical id     : 1     core id         : 1
+    26  physical id     : 1     core id         : 2
+    27  physical id     : 1     core id         : 3
+    28  physical id     : 1     core id         : 4
+    29  physical id     : 1     core id         : 5
+    30  physical id     : 1     core id         : 6
+    31  physical id     : 1     core id         : 7
+
