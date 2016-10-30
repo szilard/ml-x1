@@ -19,6 +19,8 @@ little speedup (0-7 & 16-23). Adding real cores (0-15) helps.
 
 There is almost no benefit from 16 cores to 32.
 
+With no hyperthreaded cores, the relative speedup vs linear:
+
 
 
 
