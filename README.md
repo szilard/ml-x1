@@ -25,11 +25,11 @@ With no hyperthreaded cores, the relative speedup vs linear:
 
 Also wierd that smaller r3 instances run faster:
 
-Instance     | Time 0-7  |  Time 0-3 
--------------|-----------|------------
-r3.8xlarge   |   27      |    49
-r3.4xlarge   |   24      |    44 
-r3.2xlarge   |           |    44
+Instance     | Time (s) 0-7  |  Time (s) 0-3 
+-------------|---------------|----------------
+r3.8xlarge   |   27          |    49
+r3.4xlarge   |   24          |    44 
+r3.2xlarge   |               |    44
 
 r3.4xlarge should be 1 socket of the 2 sockets of r3.8xlarge.
 
