@@ -11,5 +11,11 @@ d %>% mutate(cpucores=factor(cpucores, levels=cpucores_order)) %>%
   filter(!cpucores %in% c("0","0-1")) %>% 
   ggplot() + geom_boxplot(aes(x = cpucores, y = runtime)) + ylim(c(0,NA))
 
+d %>% mutate(cpucores=factor(cpucores, levels=cpucores_order)) %>% 
+  filter(cpucores %in% c("0","0-1","0-3","0-7","0-15")) %>% 
+  mutate(ncores = as.numeric(gsub(".*-","",cpucores))+1) %>% 
+  mutate(runtime_norm = runtime*ncores/min(runtime*ncores)) %>% 
+  ggplot() + geom_boxplot(aes(x = cpucores, y = runtime_norm)) + ylim(c(0,NA))
+
 
 ```
