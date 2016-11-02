@@ -6,7 +6,7 @@ Despite the deep learning hype, for most supervised learning problems on tabular
 all other algorithms. 
 
 The two best of the most widely used open source implementations for GBMs 
-are h2o and xgboost (see benchmarks [here](https://github.com/szilard/benchm-ml)).
+are h2o and xgboost (see [benchmarks](https://github.com/szilard/benchm-ml)).
 
 In this repo I'll play with h2o and xgboost GBMs on Amazon EC2's X1 instance with 128 cores.
 
