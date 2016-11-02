@@ -10,8 +10,9 @@ are h2o and xgboost (see [benchmarks](https://github.com/szilard/benchm-ml)).
 
 In this repo I'll play with h2o and xgboost GBMs on Amazon EC2's X1 instance with 128 cores.
 
-First, with h2o:
 
+
+## h2o
 
 
 ### Experiments on r3.8xlarge (32 cores)
@@ -57,4 +58,11 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 ![img](res-x1-h2o-hyper.png)
 
 ![img](res-x1-h2o-scaling.png)
+
+![img](res-h2o.png)
+
+
+
+
+## xgboost
 

@@ -1,0 +1,19 @@
+```{r}
+
+library(tidyverse)
+
+d1 <- read_delim("res-r3-h2o.csv", delim=":", 
+        col_names = c("instance","tool","cpucores","runtime")) 
+d2 <- read_delim("res-x1-h2o.csv", delim=":", 
+        col_names = c("instance","tool","cpucores","runtime")) 
+d <- rbind(d1, d2)
+
+cpucores_order <- unique(d$cpucores)
+
+d %>% mutate(cpucores=factor(cpucores, levels=cpucores_order)) %>% 
+  filter(cpucores %in% c("0-3","0-7","0-15","0-31","0-63","0-127")) %>% 
+  mutate(ncores = as.numeric(gsub(".*-","",cpucores))+1) %>% 
+  ggplot() + geom_boxplot(aes(x = cpucores, y = runtime, color = instance)) +
+  ylim(c(0,NA)) + geom_hline(aes(yintercept = min(runtime)), color = "grey60")
+
+```
