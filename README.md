@@ -54,5 +54,7 @@ x1.32xlarge has 4 CPU sockets with 16+16 hyperthreaded cores each
 
 Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 0-15 etc.
 
+![img](res-x1-h2o-hyper.png)
 
+![img](res-x1-h2o-scaling.png)
 
