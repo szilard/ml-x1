@@ -12,10 +12,10 @@ In this repo I'll play with h2o and xgboost GBMs on Amazon EC2's X1 instance wit
 
 
 
-## h2o
+## Experiments with h2o
 
 
-### Experiments on r3.8xlarge (32 cores)
+### on r3.8xlarge (32 cores)
 
 r3.8xlarge has 2 CPU sockets with 8+8 hyperthreaded cores each
 
@@ -49,7 +49,7 @@ r3.4xlarge should be 1 socket of the 2 sockets of r3.8xlarge.
 
 
 
-### Experiments on x1.32xlarge (128 cores)
+### on x1.32xlarge (128 cores)
 
 x1.32xlarge has 4 CPU sockets with 16+16 hyperthreaded cores each
 
@@ -64,5 +64,5 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 
 
 
-## xgboost
+## Experiments with xgboost
 
