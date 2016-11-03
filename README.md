@@ -64,11 +64,17 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 
 
 
+
+
 ## Experiments with xgboost
 
-### on x1.32xlarge (128 cores)
+
+### on r3.8xlarge (32 cores)
 
 ![img](res-r3-xgboost-hyper.png)
 
+
+
+### on x1.32xlarge (128 cores)
 
 
