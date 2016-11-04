@@ -88,15 +88,8 @@ This is weird: r3 is faster than x1 on same number of cores. Furthermore r3 32 c
 
 ### on r3.8xlarge (32 cores)
 
-This is very weird: xgboost on 4 or 32 cores runs way faster than on 8 or 16 cores:
-
-![img](figs/res-r3-xgboost-hyper.png)
-
 
 
 ### on x1.32xlarge (128 cores)
 
-![img](figs/res-x1-xgboost-hyper.png)
-
-![img](figs/res-xgboost.png)
 
