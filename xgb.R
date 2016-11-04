@@ -5,6 +5,8 @@ library(Matrix)
 
 set.seed(123)
 
+n_proc <- commandArgs(trailingOnly=TRUE)[1]
+
 d_train <- data.table::fread("train-10m.csv")
 for (k in c("Month","DayofMonth","DayOfWeek","UniqueCarrier","Origin","Dest", "dep_delayed_15min")) {
   d_train[[k]] <- as.factor(d_train[[k]])
@@ -14,7 +16,6 @@ dxgb_train <- xgb.DMatrix(data = X_train, label = ifelse(d_train$dep_delayed_15m
 
 
 tm <- system.time({
-n_proc <- detectCores()
 md <- xgb.train(data = dxgb_train, nthread = n_proc, objective = "binary:logistic", 
         nrounds = 1, max_depth = 15, eta = 0.1)
 })
