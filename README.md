@@ -21,7 +21,7 @@ r3.8xlarge has 2 CPU sockets with 8+8 hyperthreaded cores each
 
 Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc.
 
-![img](fig/res-r3-h2o-hyper.png)
+![img](figs/res-r3-h2o-hyper.png)
 
 From 0-3 (4 cores) adding another 4 cores hyperthreades (16-19) will speed up a bit,
 but not even half-way as having 8 "real" cores. 
@@ -35,7 +35,7 @@ There is almost no benefit from 16 cores to 32.
 
 With no hyperthreaded cores, the relative speedup vs linear:
 
-![img](fig/res-r3-h2o-scaling.png)
+![img](figs/res-r3-h2o-scaling.png)
 
 Weird that smaller r3 instances run faster:
 
@@ -55,7 +55,7 @@ x1.32xlarge has 4 CPU sockets with 16+16 hyperthreaded cores each
 
 Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 0-15 etc.
 
-![img](fig/res-x1-h2o-hyper.png)
+![img](figs/res-x1-h2o-hyper.png)
 
 8 cores: best on 1 CPU "real cores" (0-7), then 2 CPUs (0-3,16-19), then 1 CPU hyperthreaded (0-3,64-67).
 
@@ -70,13 +70,13 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 
 With no hyperthreaded cores, the relative speedup vs linear:
 
-![img](fig/res-x1-h2o-scaling.png)
+![img](figs/res-x1-h2o-scaling.png)
 
 
 This is weird: r3 is faster than x1 on same number of cores. Furthermore r3 32 cores is faster than x1 with all 
 128 cores.
 
-![img](fig/res-h2o.png)
+![img](figs/res-h2o.png)
 
 
 
@@ -90,7 +90,7 @@ This is weird: r3 is faster than x1 on same number of cores. Furthermore r3 32 c
 
 This is very weird: xgboost on 4 or 32 cores runs way faster than on 8 or 16 cores:
 
-![img](fig/res-r3-xgboost-hyper.png)
+![img](figs/res-r3-xgboost-hyper.png)
 
 
 
