@@ -13,7 +13,7 @@ for CORES in $(cat cores-$INSTANCE.conf); do
   LCORES=$(echo $CORES | cut -d: -f2)
   for i in {1..10}; do
     echo CORES:$CORES >> $LOG
-    RUNTIME=$(taskset -c $LCORES Rscript $TOOL.R 2>&1 | tee -a $LOG | tail -1)
+    RUNTIME=$(taskset -c $LCORES Rscript $TOOL.R $NCORES 2>&1 | tee -a $LOG | tail -1)
     echo $INSTANCE:$TOOL:$NCORES:$LCORES:$RUNTIME
   done
 done
