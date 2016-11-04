@@ -57,7 +57,24 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 
 ![img](res-x1-h2o-hyper.png)
 
+8 cores: best on 1 CPU "real cores" (0-7), then 2 CPUs (0-3,16-19), then 1 CPU hyperthreaded (0-3,64-67).
+
+16 cores: best on 1 CPU "real cores" (0-15), then adjacent CPU, then other CPU and hyperthreaded.
+
+32 cores: best 1 CPU hyperthreaded (!) (0-15,64-79), then 2 adjacent CPUs "real cores" (0-31), then other 2 CPU configs.
+
+64 cores: similar for 4 CPUs and 2 CPUs with hyperthreading.
+
+128 cores: same as 64 cores (no extra benefit).
+
+
+With no hyperthreaded cores, the relative speedup vs linear:
+
 ![img](res-x1-h2o-scaling.png)
+
+
+This is weird: r3 is faster than x1 on same number of cores. Furthermore r3 32 cores is faster than x1 with all 
+128 cores.
 
 ![img](res-h2o.png)
 
@@ -70,6 +87,8 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 
 
 ### on r3.8xlarge (32 cores)
+
+This is very weird: xgboost on 4 or 32 cores runs way faster than on 8 or 16 cores:
 
 ![img](res-r3-xgboost-hyper.png)
 
