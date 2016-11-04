@@ -96,4 +96,7 @@ This is very weird: xgboost on 4 or 32 cores runs way faster than on 8 or 16 cor
 
 ### on x1.32xlarge (128 cores)
 
+![img](figs/res-x1-xgboost-hyper.png)
+
+![img](figs/res-xgboost.png)
 
