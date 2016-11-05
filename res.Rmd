@@ -13,7 +13,7 @@ cores_order_r3 <- d %>% filter(instance=="r3") %>% arrange(ncores) %>% .[["cores
 
 d %>% filter(instance=="r3") %>% 
   mutate(cores=factor(cores, levels=cores_order_r3)) %>% 
-  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) + ylim(c(0,60)) +
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) + ylim(c(0,50)) +
   coord_flip() + facet_wrap(~ tool, ncol=1)
 
 ```
@@ -34,7 +34,7 @@ cores_order_x1 <- d %>% filter(instance=="x1") %>% arrange(ncores) %>% .[["cores
 
 d %>% filter(instance=="x1") %>% 
   mutate(cores=factor(cores, levels=cores_order_x1)) %>% 
-  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) + ylim(c(0,60)) +
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) + ylim(c(0,50)) +
   coord_flip() + facet_wrap(~ tool, ncol=1)
 
 ```
@@ -64,7 +64,7 @@ d %>% filter(tool=="xgb") %>%
   mutate(cores=factor(cores, levels=cores_order)) %>% 
   filter(!grepl(",",cores)) %>% 
   ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = instance)) +
-  ylim(c(0,NA)) + geom_hline(aes(yintercept = min(runtime)), color = "grey60")
+  ylim(c(0,60)) + geom_hline(aes(yintercept = min(runtime)), color = "grey60")
 
 ```
 
