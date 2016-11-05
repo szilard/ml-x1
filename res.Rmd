@@ -7,7 +7,7 @@ d <- read_delim("res.csv", delim=":",
 
 ```
 
-```{r fig.height=8}
+```{r r3, fig.height=8}
 
 cores_order_r3 <- d %>% filter(instance=="r3") %>% arrange(ncores) %>% .[["cores"]] %>% unique
 
@@ -28,7 +28,7 @@ d %>% filter(instance=="r3", tool=="h2o") %>%
 
 ```
 
-```{r fig.height=10}
+```{r x1, fig.height=10}
 
 cores_order_x1 <- d %>% filter(instance=="x1") %>% arrange(ncores) %>% .[["cores"]] %>% unique
 
@@ -50,7 +50,7 @@ d %>% filter(instance=="x1", tool=="h2o") %>%
 ```
 
 
-```{r}
+```{r h2o}
 
 cores_order <- d %>% arrange(ncores) %>% .[["cores"]] %>% unique
 
@@ -59,6 +59,10 @@ d %>% filter(tool=="h2o") %>%
   filter(!grepl(",",cores)) %>% 
   ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = instance)) +
   ylim(c(0,NA)) + geom_hline(aes(yintercept = min(runtime)), color = "grey60")
+
+```
+
+```{r xgb}
 
 d %>% filter(tool=="xgb") %>% 
   mutate(cores=factor(cores, levels=cores_order)) %>% 
