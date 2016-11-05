@@ -3,27 +3,68 @@
 library(tidyverse)
 
 d <- read_delim("res.csv", delim=":", 
-        col_names = c("instance","tool","cpucores","runtime")) 
-
-cpucores_order <- unique(d$cpucores)
+        col_names = c("instance","tool","ncores","cores","runtime")) 
 
 ```
 
-```{r fig.height=7}
+```{r fig.height=8}
 
-cpucores_order <- d %>% filter(instance=="r3") %>% .[["cpucores"]] %>% unique
+cores_order_r3 <- d %>% filter(instance=="r3") %>% arrange(ncores) %>% .[["cores"]] %>% unique
 
 d %>% filter(instance=="r3") %>% 
-  mutate(cpucores=factor(cpucores, levels=cpucores_order)) %>% 
-  filter(!cpucores %in% c("0","0-1")) %>% 
-  ggplot() + geom_boxplot(aes(x = cpucores, y = runtime, color = tool)) + ylim(c(0,NA)) +
+  mutate(cores=factor(cores, levels=cores_order_r3)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) + ylim(c(0,60)) +
   coord_flip() + facet_wrap(~ tool, ncol=1)
 
-d %>% filter(instance=="r3") %>% 
-  mutate(cpucores=factor(cpucores, levels=cpucores_order)) %>% 
-  filter(cpucores %in% c("0","0-1","0-3","0-7","0-15","0-31","0-63")) %>% 
-  mutate(ncores = as.numeric(gsub(".*-","",cpucores))+1) %>% 
+```
+
+```{r}
+
+d %>% filter(instance=="r3", tool=="h2o") %>% 
+  mutate(cores=factor(cores, levels=cores_order_r3)) %>% 
+  filter(!grepl(",",cores)) %>% 
   mutate(runtime_norm = runtime*ncores/min(runtime*ncores)) %>% 
-  ggplot() + geom_boxplot(aes(x = cpucores, y = runtime_norm, color = tool)) + ylim(c(0,NA))
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime_norm)) + ylim(c(0,NA))
 
 ```
+
+```{r fig.height=10}
+
+cores_order_x1 <- d %>% filter(instance=="x1") %>% arrange(ncores) %>% .[["cores"]] %>% unique
+
+d %>% filter(instance=="x1") %>% 
+  mutate(cores=factor(cores, levels=cores_order_x1)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) + ylim(c(0,60)) +
+  coord_flip() + facet_wrap(~ tool, ncol=1)
+
+```
+
+```{r}
+
+d %>% filter(instance=="x1", tool=="h2o") %>% 
+  mutate(cores=factor(cores, levels=cores_order_x1)) %>% 
+  filter(!grepl(",",cores)) %>% 
+  mutate(runtime_norm = runtime*ncores/min(runtime*ncores)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime_norm)) + ylim(c(0,NA))
+
+```
+
+
+```{r}
+
+cores_order <- d %>% arrange(ncores) %>% .[["cores"]] %>% unique
+
+d %>% filter(tool=="h2o") %>% 
+  mutate(cores=factor(cores, levels=cores_order)) %>% 
+  filter(!grepl(",",cores)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = instance)) +
+  ylim(c(0,NA)) + geom_hline(aes(yintercept = min(runtime)), color = "grey60")
+
+d %>% filter(tool=="xgb") %>% 
+  mutate(cores=factor(cores, levels=cores_order)) %>% 
+  filter(!grepl(",",cores)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = instance)) +
+  ylim(c(0,NA)) + geom_hline(aes(yintercept = min(runtime)), color = "grey60")
+
+```
+
