@@ -25,7 +25,8 @@ Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc
 
 h2o speeds-up with increased number of cores up to 16 (except when hyperthreded). 
 
-xgboost speeds-up up to 8 cores only (but a bit faster than h2o max speed).
+xgboost speeds-up up to 8 cores only and only if on same CPU (but it ends up 
+a bit faster than h2o max speed).
 
 
 ### x1.32xlarge (128 cores)
@@ -35,7 +36,8 @@ Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 
 
 <img src="figs/x1-1.png" width="700">
 
-h2o speeds-up at diminishing rates of return over 16 cores.
+h2o speeds-up at diminishing rates of return over 16 cores (and best if all cores on same CPU and
+not hyperthreaded).
 
 xgboost speeds-up up to 16 cores (if on same CPU and not hyprethreaded).
 
@@ -44,8 +46,8 @@ xgboost speeds-up up to 16 cores (if on same CPU and not hyprethreaded).
 
 <img src="figs/h2o-1.png" width="700">
 
-h2o is faster on r3 than x1 if restricted to same number of cores and it gets about
-at the same speed on r3 and x1 if all cores used.
+h2o is faster on r3 than on x1 if restricted to same number of cores and it gets about
+at the same speed on r3 and x1 if all cores used (32/128 respectively).
 
 
 ### xgboost 
@@ -53,5 +55,5 @@ at the same speed on r3 and x1 if all cores used.
 <img src="figs/xgb-1.png" width="700">
 
 xgboost is just a bit slower on x1 than r3 on same number of cores, and get slower if number 
-if cores more than 8 on r3 or 16 on x1.
+if cores more than 8 on r3 or 16 on x1 (and it's just a bit faster on x1-16 then r3-8 cores).
 
