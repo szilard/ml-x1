@@ -22,7 +22,7 @@ r3.8xlarge has 2 CPU sockets with 8+8 hyperthreaded cores each.
 Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc.
 
 ![img](figs/r3-1.png)
-<img src="figs/r3-1.png)" width="200">
+<img src="figs/r3-1.png" width="200">
 
 
 ### x1.32xlarge (128 cores)
