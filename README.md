@@ -21,7 +21,7 @@ growing number of CPU cores available in hardware.
 r3.8xlarge has 2 CPU sockets with 8+8 hyperthreaded cores each.
 Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc.
 
-<img src="figs/r3-1.png" width="600">
+<img src="figs/r3-1.png" width="700">
 
 
 ### x1.32xlarge (128 cores)
@@ -29,16 +29,16 @@ Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc
 x1.32xlarge has 4 CPU sockets with 16+16 hyperthreaded cores each.
 Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 0-15 etc.
 
-<img src="figs/x1-1.png" width="600">
+<img src="figs/x1-1.png" width="700">
 
 
 ### h2o
 
-<img src="figs/h2o-1.png" width="600">
+<img src="figs/h2o-1.png" width="700">
 
 
 ### xgboost 
 
-<img src="figs/xgb-1.png" width="600">
+<img src="figs/xgb-1.png" width="700">
 
 
