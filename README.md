@@ -64,6 +64,7 @@ As of Nov 2016 [versions](versions.txt), both h2o and xgboost struggle on machin
 a high numbers of CPUs/cores. h2o shows diminishing returns on cores on different CPU
 sockets or hyperthreaded cores. xgboost even slows down in such situations. Possible
 causes are under investigation, but it surely has to do with the intricacies of CPU/memory 
-architecture/hierarchy.
+architecture/hierarchy. Check back here later, once the developers of h2o and xgboost have
+looked into these issues and possibly made improvements.
 
 
