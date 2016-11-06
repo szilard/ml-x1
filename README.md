@@ -23,7 +23,7 @@ Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc
 
 <img src="figs/r3-1.png" width="700">
 
-h2o speeds-up with increased number of cores up to 16 (except when hyperthreded). 
+h2o speeds-up with increased number of cores up to 16 (except when hyperthreaded). 
 
 xgboost speeds-up up to 8 cores only, and only if on the same CPU (but it ends up 
 anyway a bit faster than h2o max speed).
@@ -56,4 +56,14 @@ at the same speed on r3 and x1 if all cores used (32/128 respectively).
 
 xgboost is just a bit slower on x1 than r3 on same number of cores, and it gets slower if number 
 of cores is more than 8 on r3 or 16 on x1 (and it's just a bit faster on x1-16 then r3-8 cores).
+
+
+## Summary
+
+As of Nov 2016 [versions](versions.txt), both h2o and xgboost struggle on machines with
+a high numbers of CPUs/cores. h2o shows diminishing returns on cores on different CPU
+sockets or hyperthreaded cores. xgboost even slows down in such situations. Possible
+causes are under investigation, but it surely has to do with the intricacies of CPU/memory 
+architecture/hierarchy.
+
 
