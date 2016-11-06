@@ -13,7 +13,7 @@ of the number of CPU cores on Amazon EC2's X1 (128 cores) and R3 (32 cores) inst
 
 This is not a competition between h2o and xgboost, both are excellent GBM implementations.
 In this repo I'm mainly interested in how these best tools can take advantage of the 
-growing number of CPU cores available in hardware.
+growing number of CPU cores available in modern hardware.
 
 
 ### r3.8xlarge (32 cores)
@@ -25,8 +25,8 @@ Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc
 
 h2o speeds-up with increased number of cores up to 16 (except when hyperthreded). 
 
-xgboost speeds-up up to 8 cores only and only if on same CPU (but it ends up 
-a bit faster than h2o max speed).
+xgboost speeds-up up to 8 cores only, and only if on the same CPU (but it ends up 
+anyway a bit faster than h2o max speed).
 
 
 ### x1.32xlarge (128 cores)
