@@ -54,6 +54,6 @@ at the same speed on r3 and x1 if all cores used (32/128 respectively).
 
 <img src="figs/xgb-1.png" width="700">
 
-xgboost is just a bit slower on x1 than r3 on same number of cores, and get slower if number 
-if cores more than 8 on r3 or 16 on x1 (and it's just a bit faster on x1-16 then r3-8 cores).
+xgboost is just a bit slower on x1 than r3 on same number of cores, and it gets slower if number 
+of cores is more than 8 on r3 or 16 on x1 (and it's just a bit faster on x1-16 then r3-8 cores).
 
