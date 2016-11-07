@@ -69,6 +69,7 @@ looked into these issues and possibly made improvements.
 
 Meanwhile, one can (maybe) take advantage of a high number of cores e.g. by distributing the training
 of multiple models (e.g. hyperparameter search) across CPU sockets and avoiding the 
-hyperthreaded cores (though this should be studied/tested how well it works).
+hyperthreaded cores (though this should be studied/tested how well it works, e.g. there are no
+RAM access bottlenecks etc).
 
 
