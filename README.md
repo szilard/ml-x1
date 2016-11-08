@@ -63,13 +63,14 @@ of cores is more than 8 on r3 or 16 on x1 (and it's just a bit faster on x1-16 t
 As of Nov 2016 [versions](versions.txt), both h2o and xgboost struggle on machines with
 a high numbers of CPUs/cores. h2o shows diminishing returns on cores on different CPU
 sockets or hyperthreaded cores. xgboost even slows down if multiple sockets are used. Possible
-causes are under investigation (see e.g. [here](issues/1) and [here](issues/2)), 
+causes are under investigation (see e.g. [here](https://github.com/szilard/ml-x1/issues/1) 
+and [here](https://github.com/szilard/ml-x1/issues/2)), 
 and it surely has to do with the intricacies of CPU/memory architecture/hierarchy. 
 Check back here later, once the developers of h2o and xgboost have
 looked into these issues and possibly made improvements.
 
 Meanwhile, one can (maybe) take advantage of a high number of cores e.g. by distributing the training
 of multiple models (e.g. hyperparameter search) across CPU sockets and avoiding the 
-hyperthreaded cores (see e.g. [here](issues/1#issuecomment-258751118) for xgboost).
+hyperthreaded cores (see e.g. [here](https://github.com/szilard/ml-x1/issues/1#issuecomment-258751118) for xgboost).
 
 
