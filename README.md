@@ -11,6 +11,9 @@ are h2o and xgboost (see [benchmarks](https://github.com/szilard/benchm-ml)).
 In this repo I'll take a look at the scalability of h2o and xgboost GBMs as a function
 of the number of CPU cores on Amazon EC2's X1 (128 cores) and R3 (32 cores) instances.
 
+**UPDATE:** For updates with new versions of the tools etc check out this 
+[new repo](https://github.com/szilard/GBM-multicore).
+
 This is not a competition between h2o and xgboost, both are excellent GBM implementations.
 In this repo I'm mainly interested in how these best tools can take advantage of the 
 growing number of CPU cores available in modern hardware.
@@ -68,6 +71,9 @@ and [here](https://github.com/szilard/ml-x1/issues/2)),
 and it surely has to do with the intricacies of CPU/memory architecture/hierarchy. 
 Check back here later, once the developers of h2o and xgboost have
 looked into these issues and possibly made improvements.
+
+**UPDATE:** For updates with new versions of the tools etc check out this 
+[new repo](https://github.com/szilard/GBM-multicore).
 
 Meanwhile, one can (maybe) take advantage of a high number of cores e.g. by distributing the training
 of multiple models (e.g. hyperparameter search) across CPU sockets and avoiding the 
